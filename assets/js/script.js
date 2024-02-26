@@ -5,10 +5,10 @@
 // 3.2 Implementar funciones para separar la captura de la información ingresada por el usuario con la consulta a la API. (1 Punto)
 // 3.3 Comprobar la información ingresada por el usuario, la cual, solo debe ser un número. (0.5 Puntos)
 // 3.4 Consultar la API mediante AJAX con la sintaxis de jQuery. (1 Punto)
-//3.5 Renderizar la información recibida por la API dinámicamente utilizando tarjetas (card) de Bootstrap. (1 Punto)
-// 3.6 Utilizar ciclos y métodos para arreglos u objetos que permitan recorrer, ordenar y mostrar la información. (1 Punto)
-// 3.7Emplear la librería de gráficos CanvasJS, para mostrar dinámicamente información específica de cada superhéroe. (2 Puntos)
-// 3.8 Implementar estructuras condicionales para generar alertas cuando existan errores en la búsqueda. (0.5 Puntos)
+// 3.5 Renderizar la información recibida por la API dinámicamente utilizando tarjetas (card) de Bootstrap. (1 Punto)
+// 3.7 Emplear la librería de gráficos CanvasJS, para mostrar dinámicamente información específica de cada superhéroe. (2 Puntos)
+/* 3.6 Utilizar ciclos y métodos para arreglos u objetos que permitan recorrer, ordenar y mostrar la información. (1 Punto) */
+// 3.8 Implementar estructuras condicionales para generar alertas cuando existan errores en la búsqueda. (0.5 Puntos) 
 
 $(document).ready(function(){ 
 
@@ -17,10 +17,16 @@ $(document).ready(function(){
                event.preventDefault();  
                var superheroId = $("#superId").val();
                superheroId = parseInt(superheroId);
-               console.log( superheroId );
-     
+
+               if ( superheroId >= 733 ) { 
+                    $('#alerta').html('<p>El número ingresado dede ser mayor que cero y menor que 733</p>');
+                    console.log(superheroId)
+               } else { };
+               
+               if ( superheroId < 733 ) { 
+
      const url = 'https://superheroapi.com/api/4905856019427443/'; 
-     const corsProxyUrl = 'https://fixcors.site/';//'https://cors-anywhere.herokuapp.com/'; // URL del proxy CORS Anywhere
+     const corsProxyUrl = 'https://fixcors.site/';
      const apiUrl = `${corsProxyUrl}${url}${superheroId}`; 
 
 
@@ -42,16 +48,17 @@ $(document).ready(function(){
                     <li class="list-group-item">Peso: ${datosApi.appearance.weight}</li>
                     <li class="list-group-item">También se le conoce como: ${datosApi.biography.aliases}</li>
                     </ul>`);
-                    $('#titulo-poderes').html(`Superpoderes`);
-                    $('#poderes').html(`<ul class="list-group">
-                    <li class="list-group-item">Inteligencia: ${datosApi.powerstats.intelligence}</li>
-                    <li class="list-group-item">Fortaleza: ${datosApi.powerstats.strength}</li>
-                    <li class="list-group-item">Velocidad: ${datosApi.powerstats.speed}</li>
-                    <li class="list-group-item">Resistencia: ${datosApi.powerstats.durability}</li>
-                    <li class="list-group-item">Poder: ${datosApi.powerstats.power}</li>
-                    <li class="list-group-item">Capacidad combativa: ${datosApi.powerstats.combat}</li>`
-                    );
                     
+                    $('#titulo-poderes').html(`Superpoderes`);
+                    let powers = '<ul class="list-group">';
+                    $.each(datosApi.powerstats, function (ind, elem) { 
+                         powers += `<li class="list-group-item"> ${ind} : ${elem}`;
+                       });
+                    powers += '</ul>';
+                    $('#poderes').html(powers);
+                    
+                    $( "li" ).filter( ":odd" ).css('background-color','#f8f8f8');
+
                     //let poderes = datosApi.powerstats;
                     //console.log(poderes.speed);
 
@@ -104,6 +111,8 @@ $(document).ready(function(){
                     //console.log('no se encontró superhéroe con ese ID');
                     },
                }); // cierra llamado ajax
+
+          };
  
           }); // cierra evento buscar
 
