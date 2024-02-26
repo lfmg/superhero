@@ -84,12 +84,12 @@ $(document).ready(function(){
                               color: "#D20002",
                               type: "bar",
                               dataPoints: [
-                                   { y: parseInt(datosApi.powerstats.combat), label: (`${datosApi.powerstats.combat}%`), indexLabel: "Capacidad combativa" },
-                                   { y: parseInt(datosApi.powerstats.power), label: (`${datosApi.powerstats.power}%`), indexLabel: "Poder" },
-                                   { y: parseInt(datosApi.powerstats.durability), label: (`${datosApi.powerstats.durability}%`), indexLabel: "Resistencia" },
-                                   { y: parseInt(datosApi.powerstats.speed), label: (`${datosApi.powerstats.speed}%`), indexLabel: "Velocidad" },
-                                   { y: parseInt(datosApi.powerstats.strength), label: (`${datosApi.powerstats.strength}%`), indexLabel: "Fortaleza" },
-                                   { y: parseInt(datosApi.powerstats.intelligence), label: (`${datosApi.powerstats.intelligence}%`), indexLabel: "Inteligencia" },
+                                   { y: parseInt(datosApi.powerstats.combat), label: (`Capacidad combativa: ${datosApi.powerstats.combat}%`), indexLabel: "Capacidad combativa" },
+                                   { y: parseInt(datosApi.powerstats.power), label: (`Poder: ${datosApi.powerstats.power}%`), indexLabel: "Poder" },
+                                   { y: parseInt(datosApi.powerstats.durability), label: (`Resistencia: ${datosApi.powerstats.durability}%`), indexLabel: "Resistencia" },
+                                   { y: parseInt(datosApi.powerstats.speed), label: (`Velocidad: ${datosApi.powerstats.speed}%`), indexLabel: "Velocidad" },
+                                   { y: parseInt(datosApi.powerstats.strength), label: (`Fortaleza: ${datosApi.powerstats.strength}%`), indexLabel: "Fortaleza" },
+                                   { y: parseInt(datosApi.powerstats.intelligence), label: (`Inteligencia: ${datosApi.powerstats.intelligence}%`), indexLabel: "Inteligencia" },
                               ],
                          }] }; 
 
