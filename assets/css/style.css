@@ -1,0 +1,54 @@
+/*
+colores
+*/
+
+.color1 { background-color: #17A2B8; }
+.color2 { background-color: #E83E8C; }
+.color3 { background-color: #17A2B8; }
+.color4 { background-color: #17A2B8; }
+.color5 { background-color: #17A2B8; }
+.color6 { background-color: #17A2B8; }
+
+body * {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0; padding: 0;
+}
+section {
+    margin-bottom: 25px;
+}
+.logo img { width: 100%; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: #dadada solid 1px;
+}
+.seccion { padding: 60px 0; 
+    text-align: center;
+    border-bottom: #dadada solid 1px; 
+    margin: 0 auto;
+}
+#buscarHeroe {
+    background-color: #f8f8f8;
+    border: #dadada solid 1px;
+    border-radius: 8px;
+}
+#superheroe .card,
+#superheroe #poderes {
+    background-color: #D20002;
+    
+}
+#chart-card {
+    background-color: #fff!important;
+    border: #dadada solid 1px;
+    min-height: 440px;
+}
+#chartContainer {
+/*    
+   margin-right: 20px; */
+}
+#biografia img {
+    width: 100%;
+}
+#superFoto {
+    border-radius: 6px; margin-top: 8px;
+}
